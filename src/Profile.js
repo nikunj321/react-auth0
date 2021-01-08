@@ -22,21 +22,22 @@ class Profile extends Component {
   };
 
   render() {
-    // const { profile } = this.state;
-    // if(!profile) {
-    //     return null;
-    // }
+    const { profile } = this.state;
+    console.log(profile);
+    if(!profile) {
+        return null;
+    }
     return (
-      <>
+      <div>
         <h1>Profile</h1>
-        {/* <p>{profile.nickname}</p>
+        <p>{profile.nickname}</p>
         <img
           style={{ maxWidth: "50", maxHeight: "50" }}
           src={profile.picture}
           alt="profile pic"
         />
-        <pre>{JSON.stringify(profile,2, null)}</pre> */}
-      </>
+        <pre>{JSON.stringify(profile,2, null)}</pre>
+      </div>
     );
   }
 }
