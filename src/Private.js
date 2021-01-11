@@ -11,21 +11,19 @@ class Private extends Component {
 
   componentDidMount() {
     fetch("/private", {
-        headers: { Authorization: `Bearer ${this.props.auth.getAccessToken()}` }
+      headers: { Authorization: `Bearer ${this.props.auth.getAccessToken()}` },
     })
       .then((response) => {
-          console.log(`${response.ok} && ${response}`)
+        // console.log(`${response.ok} && ${response}`);
         if (response.ok) return response.json();
         throw new Error("Network response was not ok.");
       })
-      .then(response => this.setState({ messge: response.message }))
-      .catch(error => this.setState({ message: error.message }));
+      .then((response) => this.setState({ message: response.message }))
+      .catch((error) => this.setState({ message: error.message }));
   }
 
   render() {
-    return <p>
-        {this.state.message}
-    </p>;
+    return <p>{this.state.message}</p>;
   }
 }
 

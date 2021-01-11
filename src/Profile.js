@@ -17,7 +17,7 @@ class Profile extends Component {
   loadUserProfile = () => {
     this.props.auth.getProfile((profile, error) => {
       this.setState({ profile, error });
-      console.log(profile);
+      // console.log(profile);
     });
   };
 

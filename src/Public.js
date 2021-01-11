@@ -15,9 +15,10 @@ class Public extends Component {
         if (response.ok) return response.json();
         throw new Error("Network response was not ok.");
       })
-      .then(response => this.setState({ messge: response.message }))
+      .then(response => this.setState({ message: response.message }))
       .catch(error => this.setState({ message: error.message }));
   }
+
 
   render() {
     return <p>
